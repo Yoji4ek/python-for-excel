@@ -13,8 +13,12 @@ for path in (this_dir / "sales_data").rglob("*.xls*"):
     part = pd.read_excel(path)
     parts.append(part)
 
+parts
+
 # Combine the DataFrames from each file into a single DataFrame
 df = pd.concat(parts)
+
+df.head()
 
 # Pivot each store into a column and sum up all transactions per date
 pivot = pd.pivot_table(df,
